@@ -8,6 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Backend server is up and running!');
+});
+
 app.use('/books', booksRouter);
 
 const PORT = process.env.PORT || 5000;
