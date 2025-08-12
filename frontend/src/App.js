@@ -13,7 +13,7 @@ function App() {
         setBooks(data);
       })
       .catch(err => console.error(err));
-  }, []);
+  }, [backendUrl]);
 
 
   return (
