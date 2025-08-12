@@ -6,7 +6,7 @@ function App() {
   const [books, setBooks] = useState([]);
   const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
   useEffect(() => {
-    fetch('${backendUrl}/books')
+    fetch(`${backendUrl}/books`)
       .then(res => res.json())
       .then(data => {
         console.log("Fetched books:", data);
