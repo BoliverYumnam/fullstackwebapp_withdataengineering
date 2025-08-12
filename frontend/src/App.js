@@ -13,7 +13,7 @@ function App() {
         setBooks(data);
       })
       .catch(err => console.error(err));
-  }, []);
+  }, [backendUrl]);
 
   const handleClick = (e) => {
     e.target.style.backgroundColor = '#ffe58f'; // light yellow highlight
