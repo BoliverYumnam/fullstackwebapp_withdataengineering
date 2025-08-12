@@ -5,15 +5,16 @@ import BookCard from './components/BookCard';
 function App() {
   const [books, setBooks] = useState([]);
   const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://fullstackwebappwithdataengineering-production.up.railway.app';
+  const backendEndPoint = `${backendUrl}/books`;
   useEffect(() => {
-    fetch(`${backendUrl}/books`)
+    fetch(backendEndPoint)
       .then(res => res.json())
       .then(data => {
         console.log("Fetched books:", data);
         setBooks(data);
       })
       .catch(err => console.error(err));
-  }, [backendUrl]);
+  }, [backendEndPoint]);
 
   const handleClick = (e) => {
     e.target.style.backgroundColor = '#ffe58f'; // light yellow highlight
@@ -29,7 +30,7 @@ function App() {
       <p style={{ marginBottom: '2rem' }}>
         Go to this{' '}
         <a
-          href={`${backendUrl}/books`}
+          href={backendEndPoint}
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleClick}
