@@ -11,5 +11,4 @@ async function fetchBooks(req, res) {
   }
 }
 
-
 module.exports = { fetchBooks };
