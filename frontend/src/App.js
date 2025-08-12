@@ -15,7 +15,7 @@ function App() {
         setBooks(data);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [backendUrl]); // ✅ added backendUrl as dependency
 
   const handleClick = (e) => {
     e.target.style.backgroundColor = '#ffe58f'; // light yellow highlight
